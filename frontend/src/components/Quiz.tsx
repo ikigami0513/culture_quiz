@@ -49,7 +49,7 @@ export const Quiz: React.FC = () => {
             const currentQuestion = questions[currentQuestionIndex];
             const shuffledAnswers = getShuffledAnswers(currentQuestion.answers);
             setDisplayedAnswers(shuffledAnswers);
-            setTimeLeft(30); // Reset timer for the new question
+            setTimeLeft(30);
         }
     }, [currentQuestionIndex, questions]);
 
@@ -78,7 +78,6 @@ export const Quiz: React.FC = () => {
         else {
             displayedAnswers.forEach((answer) => {
                 if (answer.id === answerId) {
-                    // Colorer en vert si la réponse est correcte, sinon en rouge
                     if (answer.is_true) {
                         document.getElementById(answerId)?.classList.add("bg-green-500", "hover:bg-green-600");
                         setScore(currentScore => currentScore + 1);
