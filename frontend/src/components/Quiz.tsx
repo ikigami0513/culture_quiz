@@ -65,7 +65,7 @@ export const Quiz: React.FC = () => {
         }, 1000);
 
         return () => clearInterval(timer);
-    }, [timeLeft]);
+    }, [currentQuestionIndex, questions.length, quizFinished, timeLeft]);
 
     const handleAnswerClick = (answerId: string | null) => {
         if (answerId === null) {
