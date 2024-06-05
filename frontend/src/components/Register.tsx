@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, ChangeEvent } from "react"
 import { User } from "../entities/user.entity";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../settings";
 
 interface RegisterProps {
     setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
@@ -40,7 +41,7 @@ export const Register: React.FC<RegisterProps> = ({setUser}) => {
         }
 
         try {
-            const response = await fetch(`http://127.0.0.1:8000/api/register/`, {
+            const response = await fetch(`${API_BASE_URL}/api/register/`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

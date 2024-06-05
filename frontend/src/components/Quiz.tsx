@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import DefaultQuestion from "../default_question.png";
+import { API_BASE_URL } from "../settings";
 
 interface AnswerProps {
     id: string;
@@ -30,7 +31,7 @@ export const Quiz: React.FC = () => {
     useEffect(() => {
         const fetchQuiz = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/quiz/?category=${id}`);
+                const response = await fetch(`${API_BASE_URL}/api/quiz/?category=${id}`);
                 if (!response.ok) {
                     throw new Error("failed to fetch quiz");
                 }

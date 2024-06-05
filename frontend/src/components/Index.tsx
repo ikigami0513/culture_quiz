@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CategoryProps, Category } from './Category';
+import { API_BASE_URL } from '../settings';
 
 export const Index: React.FC = () => {
     const [categories, setCategories] = useState<CategoryProps[]>([]);
@@ -7,7 +8,7 @@ export const Index: React.FC = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/categories/');
+                const response = await fetch(`${API_BASE_URL}/api/categories/`);
                 if (!response.ok) {
                     throw new Error("failed to fetch categories");
                 }

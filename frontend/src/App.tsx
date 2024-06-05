@@ -8,6 +8,7 @@ import { Index } from './components/Index';
 import { Quiz } from './components/Quiz';
 import { Login } from './components/Login';
 import { Register } from './components/Register';
+import { API_BASE_URL } from './settings';
     
 const App: React.FC = () => {
     const [user, setUser] = useState<User | undefined>(undefined);
@@ -16,7 +17,7 @@ const App: React.FC = () => {
         const storedToken = localStorage.getItem('token') || sessionStorage.getItem('token');
         if (storedToken) {            
             const fetchStoredToken = async () => {
-                const response = await fetch('http://127.0.0.1:8000/api/login/token/', {
+                const response = await fetch(`${API_BASE_URL}/api/login/token/`, {
                 method: "POST",
                     headers: {
                         Authorization: `Token ${storedToken}`
