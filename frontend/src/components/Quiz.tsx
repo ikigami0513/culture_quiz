@@ -122,7 +122,7 @@ export const Quiz: React.FC = () => {
         <div className="mx-auto p-4">
             <div className="bg-gray-600 shadow-md rounded-lg overflow-hidden">
                 <img
-                    src={currentQuestion.picture ? `http://127.0.0.1:8000${currentQuestion.picture}` : DefaultQuestion}
+                    src={currentQuestion.picture ? `${API_BASE_URL}/${currentQuestion.picture}` : DefaultQuestion}
                     alt="Quiz"
                     className="w-auto h-48 mx-auto p-4"
                 />
