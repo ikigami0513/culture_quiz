@@ -165,7 +165,7 @@ export const Quiz: React.FC = () => {
             </div>
             {quizFinished && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="bg-white p-8 rounded-lg">
+                    <div className="bg-gray-700 text-white p-8 rounded-lg">
                         <h2 className="text-xl font-bold mb-4">Quiz Terminé</h2>
                         <p>Votre score final est : {score} / {questions.length}</p>
                         <button onClick={redirectToHome} className="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 mt-4">
